@@ -6,7 +6,7 @@ readme = "README.md"
 authors = [
     { name = "David Sciacchettano", email = "david.sciacchettano@gmail.com" }
 ]
-requires-python = ">=3.14"
+requires-python = ">=3.12"
 dependencies = [
     "PySide6"
 ]
