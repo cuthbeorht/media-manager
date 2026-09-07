@@ -11,6 +11,17 @@ dependencies = [
     "PySide6"
 ]
 
+[project.optional-dependencies]
+all = [
+    "MediaManager[dev]"
+]
+dev = [
+    "pytest",
+    "pytest-qt",
+    "ruff"
+]
+
+
 [project.scripts]
 MediaManager = "MediaManager:main"
 

@@ -1,0 +1,46 @@
+name: CI
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  test:
+    name: Lint & Test (Python ${{ matrix.python-version }})
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        # Test against multiple Python versions if needed
+        python-version: ["3.11", "3.12", "3.13", "3.14", "3.15"]
+      fail-fast: false
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up uv
+        uses: astral-sh/setup-uv@v5
+        with:
+          # Automatically installs the correct Python version and enables global caching
+          python-version: ${{ matrix.python-version }}
+          enable-cache: true
+
+      - name: Install dependencies
+        # Syncs dependencies using your uv.lock file, ensuring dev tools are installed
+        run: uv sync --locked --dev
+
+      - name: Run Ruff Linter
+        # Fails the build if there are unresolved lint violations
+        run: uv run ruff check .
+
+      - name: Check Code Formatting
+        # Fails the build if the code isn't formatted properly according to PEP standards
+        run: uv run ruff format --check .
+
+      - name: Run Tests with pytest
+        # Executes your test suite
+        run: uv run pytest
