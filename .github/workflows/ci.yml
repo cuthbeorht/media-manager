@@ -31,7 +31,7 @@ jobs:
 
       - name: Install dependencies
         # Syncs dependencies using your uv.lock file, ensuring dev tools are installed
-        run: uv sync --locked --dev --extras all
+        run: uv sync --locked --dev --all-extras
 
       - name: Run Ruff Linter
         # Fails the build if there are unresolved lint violations
