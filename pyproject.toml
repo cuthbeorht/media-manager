@@ -7,7 +7,9 @@ authors = [
     { name = "David Sciacchettano", email = "david.sciacchettano@gmail.com" }
 ]
 requires-python = ">=3.14"
-dependencies = []
+dependencies = [
+    "PySide6"
+]
 
 [project.scripts]
 MediaManager = "MediaManager:main"
