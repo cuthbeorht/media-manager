@@ -12,8 +12,7 @@ class MyWidget(QtWidgets.QWidget):
         self.hello = ["Hallo Welt", "Hei maailma", "Hola Mundo", "Привет мир"]
 
         self.button = QtWidgets.QPushButton("Click me!")
-        self.text = QtWidgets.QLabel("Hello World",
-                                     alignment=QtCore.Qt.AlignCenter)
+        self.text = QtWidgets.QLabel("Hello World", alignment=QtCore.Qt.AlignCenter)
 
         self.layout = QtWidgets.QVBoxLayout(self)
         self.layout.addWidget(self.text)
@@ -24,6 +23,7 @@ class MyWidget(QtWidgets.QWidget):
     @QtCore.Slot()
     def magic(self):
         self.text.setText(random.choice(self.hello))
+
 
 def main() -> None:
     print("Hello from media-manager!")
