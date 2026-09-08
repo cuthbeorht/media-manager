@@ -6,10 +6,21 @@ readme = "README.md"
 authors = [
     { name = "David Sciacchettano", email = "david.sciacchettano@gmail.com" }
 ]
-requires-python = ">=3.14"
+requires-python = ">=3.12"
 dependencies = [
     "PySide6"
 ]
+
+[project.optional-dependencies]
+all = [
+    "MediaManager[dev]"
+]
+dev = [
+    "pytest",
+    "pytest-qt",
+    "ruff"
+]
+
 
 [project.scripts]
 MediaManager = "MediaManager:main"
@@ -20,3 +31,6 @@ build-backend = "uv_build"
 
 [tool.uv.build-backend]
 module-name="MediaManager"
+
+[tool.ruff.lint.pep8-naming]
+ignore-names = ["MediaManager"]
