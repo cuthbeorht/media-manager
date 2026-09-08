@@ -1,5 +1,7 @@
-from MediaManager import MyWidget
 from PySide6.QtCore import Qt
+
+from MediaManager import MyWidget
+
 
 def test_click_me_button(qtbot):
     window = MyWidget()

@@ -31,3 +31,6 @@ build-backend = "uv_build"
 
 [tool.uv.build-backend]
 module-name="MediaManager"
+
+[tool.ruff.lint.pep8-naming]
+ignore-names = ["MediaManager"]
