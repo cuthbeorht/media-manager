@@ -48,4 +48,6 @@ jobs:
 
       - name: Run Tests with pytest
         # Executes your test suite
-        run: uv run pytest .
+        run: uv run python -m pytest
+        env:
+          QT_QPA_PLATFORM: offscreen
