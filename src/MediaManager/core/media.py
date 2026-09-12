@@ -1,4 +1,5 @@
 from pathlib import Path
+from typing import Self
 
 from pydantic import BaseModel
 
@@ -8,6 +9,10 @@ class MediaFile(BaseModel):
     size: int
     length: int
     type: str
+
+    @classmethod
+    def from_file(cls, path: str) -> Self:
+        return cls(full_file_name=Path(path), size=9999, length=200, type="MP3")
 
 
 class MediaMetadata(BaseModel):
