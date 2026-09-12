@@ -23,7 +23,7 @@ dev = [
 
 
 [project.scripts]
-MediaManager = "MediaManager:main"
+MediaManager = "MediaManager.main:main"
 
 [build-system]
 requires = ["uv_build>=0.12.10,<0.13.0"]
@@ -34,3 +34,6 @@ module-name="MediaManager"
 
 [tool.ruff.lint.pep8-naming]
 ignore-names = ["MediaManager"]
+
+[tool.ruff.lint]
+extend-safe-fixes=["F401"]
