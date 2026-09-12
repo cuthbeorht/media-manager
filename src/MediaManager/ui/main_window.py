@@ -12,6 +12,6 @@ class MainWindow(QMainWindow):
 
         # Add log to main window
         # logging_window = LoggingWindow()
-        home_view = HomeView()
+        self.home_view = HomeView()
 
-        self.setCentralWidget(home_view)
+        self.setCentralWidget(self.home_view)
