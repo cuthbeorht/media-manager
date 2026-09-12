@@ -6,6 +6,7 @@ from PySide6 import QtCore, QtWidgets
 
 from MediaManager.ui.main_window import MainWindow
 
+
 def main() -> None:
     print("Hello from media-manager!")
 
@@ -19,6 +20,7 @@ def main() -> None:
     widget.show()
 
     sys.exit(app.exec())
+
 
 if __name__ == "__main__":
     main()

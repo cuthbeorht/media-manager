@@ -3,8 +3,8 @@ from PySide6.QtWidgets import QMainWindow
 from MediaManager.ui.components.logging_component import LoggingWindow
 from MediaManager.ui.views.home_view import HomeView
 
-class MainWindow(QMainWindow):
 
+class MainWindow(QMainWindow):
     def __init__(self):
         super().__init__()
 
