@@ -1,4 +1,4 @@
-from PySide6.QtWidgets import QListWidget, QVBoxLayout, QWidget, QTextEdit
+from PySide6.QtWidgets import QListWidget, QVBoxLayout, QWidget
 
 
 class LibraryComponent(QWidget):

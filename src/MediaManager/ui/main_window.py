@@ -1,6 +1,5 @@
 from PySide6.QtWidgets import QMainWindow
 
-from MediaManager.ui.components.logging_component import LoggingWindow
 from MediaManager.ui.views.home_view import HomeView
 
 
