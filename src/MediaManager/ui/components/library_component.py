@@ -1,4 +1,4 @@
-from PySide6.QtWidgets import QVBoxLayout, QWidget, QTextEdit
+from PySide6.QtWidgets import QListWidget, QVBoxLayout, QWidget, QTextEdit
 
 class LibraryComponent(QWidget):
     def __init__(self):
@@ -6,9 +6,9 @@ class LibraryComponent(QWidget):
 
         self._layout = QVBoxLayout()
         
-        self._textbox = QTextEdit(self)
-        self._textbox.setText("fpoo")
+        self._list_box = QListWidget()
+        self._list_box.addItems(["Foo"])
 
-        self._layout.addWidget(self._textbox)
+        self._layout.addWidget(self._list_box)
 
         self.setLayout(self._layout)
