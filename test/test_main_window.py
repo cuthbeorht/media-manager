@@ -1,6 +1,6 @@
 from PySide6.QtCore import Qt
 
-from MediaManager import MainWindow
+from MediaManager.ui.main_window import MainWindow
 
 
 def test_click_me_button(qtbot):
