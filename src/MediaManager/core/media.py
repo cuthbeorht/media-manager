@@ -1,6 +1,6 @@
+import os
 from pathlib import Path
 from typing import Self
-import os
 
 from pydantic import BaseModel
 
@@ -44,4 +44,3 @@ class MediaLibraryService:
     @property
     def media_files(self) -> list[MediaFile]:
         return self._media_files
-
