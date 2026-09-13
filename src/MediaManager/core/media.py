@@ -1,5 +1,6 @@
 from pathlib import Path
 from typing import Self
+import os
 
 from pydantic import BaseModel
 
@@ -12,7 +13,15 @@ class MediaFile(BaseModel):
 
     @classmethod
     def from_file(cls, path: str) -> Self:
-        return cls(full_file_name=Path(path), size=9999, length=200, type="MP3")
+
+        media_file = Path(path)
+        # make sure file exists
+        if not media_file.is_file():
+            raise ValueError(f"File {path} does not exist.")
+
+        file_size = media_file.stat().st_size
+
+        return cls(full_file_name=media_file, size=file_size, length=200, type="MP3")
 
 
 class MediaMetadata(BaseModel):
@@ -24,6 +33,15 @@ class MediaMetadata(BaseModel):
 class MediaLibraryService:
     def __init__(self, root_dir: Path):
         self._root_dir = root_dir
+        self._media_files: list[MediaFile] = []
 
     def walk(self):
-        pass
+        for root, dirs, files in os.walk(self._root_dir):
+            for filename in files:
+                full_path = os.path.join(root, filename)
+                self._media_files.append(MediaFile.from_file(full_path))
+
+    @property
+    def media_files(self) -> list[MediaFile]:
+        return self._media_files
+

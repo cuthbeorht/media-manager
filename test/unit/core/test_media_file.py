@@ -34,7 +34,7 @@ def test_given_valid_mp3_file_to_media_file_expect_valid_media_file(project_root
         full_file_name=Path(
             f"{project_root}/test/fixtures/media/desifreemusic-creative-commons-music-free-download-and-safe-for-monetization-364593.mp3"
         ),
-        size=9999,
+        size=3678720,
         length=200,
         type="MP3",
     )
